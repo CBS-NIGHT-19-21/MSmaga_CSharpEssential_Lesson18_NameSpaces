@@ -1,6 +1,9 @@
-﻿
+﻿// Preprocessor command
+#define V_1_0
+
 using Library;
 using PriceDBSpace;
+
 class Program
 {
     static void Main()
@@ -12,10 +15,22 @@ class Program
 
         #endregion
 
+#if (DEBUG && V_1_0)
+
+        Console.WriteLine();
+#endif
+#line 123 // String of the error 123
+
+#line hidden // Debuger - don`t use
+        Console.WriteLine();
+#line default
+
+#warning Be careful
+// #error My error
         // Link ClassLibrary1.
-        Class1 instance = new ();
+        Class1 instance = new();
         instance.PublicMethod();
- 
+
         //instance.PrivateMethod();
 
         // Link PriceDBSpace.
